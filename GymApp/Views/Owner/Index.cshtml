@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-right: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 20px; /* Add margin to the right of the image */
+        }
+
+        .alert {
+            padding: 10px;
+            background-color: #dff0d8;
+            border: 1px solid #d0e9c6;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block; /* Make the button a block element to occupy full width */
+            width: fit-content; /* Adjust the width based on content */
+            margin-top: 20px; /* Add some space between the table and the button */
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert">@TempData["SuccessMessage"]</div>
+    }
+
+    <div class="container">
+        <div>
+            <img src="@Model.imageSrc" style="width: 375px; height: 440px;" />
+        </div>
+
+        <table>
+            <tr>
+                <th colspan="2">Profile Information</th>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>@Model.name</td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td>@Model.age</td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>@Model.phoneNum</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>@Model.email</td>
+            </tr>
+            <tr>
+                <td>SSN:</td>
+                <td>@Model.SSN</td>
+            </tr>
+        </table>
+
+        <a asp-action="show" asp-controller="Owner" class="btn btn-secondary" style="width:150px">
+            Show my gyms
+        </a>
+    </div>
+</body>
+</html>

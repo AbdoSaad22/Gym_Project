@@ -1,0 +1,26 @@
+﻿@model Gym
+
+<table class="table" style="width: 50%;">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <td>@Model.name</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>@Model.location</td>
+        </tr>
+        <tr>
+            <th>Subscription Fees</th>
+            <td>@Model.subscribtionFees</td>
+        </tr>
+        <tr>
+            <th>Number of Tainees</th>
+            <td>@TempData["trainees"]</td>
+        </tr>
+        <tr>
+            <th>Number of Coaches</th>
+            <td>@TempData["coaches"]</td>
+        </tr>
+    </tbody>
+</table>

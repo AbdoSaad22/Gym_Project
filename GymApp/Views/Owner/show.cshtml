@@ -1,0 +1,25 @@
+﻿@model List<Gym>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gym in Model)
+        {
+            <tr>
+                <td>@gym.name</td>
+                <td>
+                    <a asp-action="show" asp-controller="Gym" asp-route-id="@gym.GymId" class="btn btn-secondary" style="width:150px">Show Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" asp-controller="Owner" class="btn btn-secondary" style="width:150px">
+    Add new gym
+</a>
